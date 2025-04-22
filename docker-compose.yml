@@ -1,0 +1,33 @@
+services:
+  springboot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+      - mongo
+    networks:
+      - backend
+
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_DB: ridesharedb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - backend
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    networks:
+      - backend
+
+networks:
+  backend:
