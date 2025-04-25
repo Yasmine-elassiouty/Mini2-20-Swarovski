@@ -3,7 +3,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-
 @Table(name = "payments")
 public class Payment {
 
