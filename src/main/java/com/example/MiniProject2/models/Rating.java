@@ -26,6 +26,15 @@ public class Rating {
         this.score = score;
         this.comment = comment;
     }
+    
+    // extra constructor
+    public Rating(long entityId, String entityType, int score, String comment, LocalDateTime ratingDate) {
+        this.entityId = entityId;
+        this.entityType = entityType;
+        this.score = score;
+        this.comment = comment;
+        this.ratingDate = ratingDate;
+    }
 
     public Rating(String id,
                   Long entityId,
